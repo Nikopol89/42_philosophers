@@ -1,0 +1,76 @@
+FUNCTIONS:
+memset
+printf
+malloc
+free
+write
+usleep
+gettimeofday
+pthread_create
+pthread_detach
+pthread_join
+pthread_mutex_init
+pthread_mutex_destroy
+pthread_mutex_lock
+pthread_mutex_unlock
+
+/*
+*/
+
+ARGUMENTS:
+- number_of_philosophers : from 1, each one is N + 1 on round table
+(number_of_forks == number_of_philosophers)
+- time_to_die : ms counter after last meal
+- time_to_eat : ms to eat a meal, uses 2 forks
+- time_to_sleep : ms counter
+- number_of_times_each_philosopher_must_eat : optional, number of meals for each philosopher to stop simulation
+
+/*
+*/
+
+STATUS REPORT: X is philosopher's ID
+timestamp_in_ms X has taken a fork
+timestamp_in_ms X is eating
+timestamp_in_ms X is sleeping
+timestamp_in_ms X is thinking
+timestamp_in_ms X died
+
+DO NOT SCRAMBLE/INTERTWINE PHILOSOPHERS' STATUS REPORTS!
+mutex for printing ?
+
+/*
+*/
+
+ROUTINE:
+eat -> sleep -> think
+
+/*
+*/
+
+RULES:
+one fork between philosophers, left & right of each
+mutex each fork state to avoid duplications
+each philosopher is a thread
+
+/* */ BONUS /* */
+
+FUNCTIONS:
+memset
+printf
+malloc
+free
+write
+fork
+kill
+exit
+pthread_create
+pthread_detach
+pthread_join
+usleep
+gettimeofday
+waitpid
+sem_open
+sem_close
+sem_post
+sem_wait
+sem_unlink
